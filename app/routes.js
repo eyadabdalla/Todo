@@ -71,5 +71,6 @@ module.exports = function(app, passport) {
         res.redirect('/');
     }
 
+    // todo list routes
     app.get('/list', List.todoList);
 };
