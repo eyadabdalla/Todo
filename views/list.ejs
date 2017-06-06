@@ -13,7 +13,7 @@
 <div class="container">
 
     <div class="page-header text-center">
-        <h1><span class="fa fa-anchor"></span> Profile Page</h1>
+        <h1><span class="fa fa-anchor"></span> Home </h1>
         <a href="/logout" class="btn btn-default btn-sm">Logout</a>
     </div>
 
@@ -22,16 +22,25 @@
         <!-- User info -->
         <div class="col-sm-6">
             <div class="well">
-                <h3><span class="fa fa-user"></span> Local</h3>
+                <h3><span class="fa fa-user"></span> <%= user.email %></h3>
+                <h2> Todo list </h2>
 
-                    <p>
+
+                    <!-- <p>
                         <strong>id</strong>: <%= user._id %><br>
                         <strong>email</strong>: <%= user.email %><br>
-                    </p>
-                    <ul>
-                        <li> testing how this will look</li>
-                    </ul>
+                    </p> -->
+                    <form action="/create" method="post" accept-charset="utf-8">
+                      <input type="text" name="content" />
+                    </form>
 
+                    <% if (todoList.length) { %>
+                      <ul>
+                        <% todoList.forEach(function(task){ %>
+                          <li><h4><%= task.body %></h4></li>
+                        <% }) %>
+                      </ul>
+                    <% } %>
             </div>
         </div>
 

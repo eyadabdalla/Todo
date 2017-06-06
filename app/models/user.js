@@ -10,10 +10,10 @@ var userSchema = mongoose.Schema({
     email : { type : String, default : '', trim : true }, 
     password : { type : String, default : '', trim : true },
     todos : [{
-        title : { type : String, default : '', trim : true },
+        body: { type : String, default : '', trim : true,
         isFulfilled : { type : Boolean, default : false},
-        created : { type : Date, default : Date.now },
-        body: { type : String, default : '', trim : true }
+        created : { type : Date, default : Date.now }
+        }
     }]
 });
 
